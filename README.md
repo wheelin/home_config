@@ -1,0 +1,1 @@
+Just a repo to save my bash and terminator configurations
