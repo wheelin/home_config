@@ -1,0 +1,111 @@
+#!/bin/bash
+
+if [ $# -gt 0 ]; then
+	if [ $1 = "java" ]; then
+
+		echo Creating new $2.java in $PWD
+		cp /home/$USER/bin/models/new.java $PWD/$2.java
+		sed -i -e "s/temp/$name/g" $PWD/$2.java
+
+	elif [ $1 = "report" ] && [ ! -z $2 ]; then
+
+		echo Creating new repport named $2 in $PWD
+		mkdir $PWD/$2
+		mkdir $PWD/$2/img
+		mkdir $PWD/$2/sections
+		cp /home/$USER/bin/models/section.tex $PWD/$2/sections/intro.tex
+		cp /home/$USER/bin/models/section.tex $PWD/$2/sections/other.tex
+		cp /home/$USER/bin/models/section.tex $PWD/$2/sections/conclusion.tex
+		cp /home/$USER/bin/models/new.tex $PWD/$2/$2.tex
+
+	elif [ $1 = "section" ]; then
+
+		echo Creating new $2.tex in $PWD
+		cp /home/$USER/bin/models/section.tex $PWD/$2.tex
+		sed -i -e "s/New section/$name/g" $PWD/$2.tex
+
+	elif [ $1 = "bash" ]; then
+
+		echo Creating new $2 bash script in $PWD
+		cp /home/$USER/bin/models/new $PWD/$2
+		chmod +x $PWD/$2
+		sed -i -e "s/auteur/$USER/g" /home/$USER/bin/$2
+		sed -i -e "s/titre/$2/g" /home/$USER/bin/$2
+		NOW=$(date +"%m-%d-%Y")
+		sed -i -e "s/today/$NOW/g" /home/$USER/bin/$2
+	
+	elif [ "$1" = "c" ] && [ "$2" = "main" ] || [ "$1" = "c" ] && [ -z $2 ]; then
+
+		echo Creating new main.c in $PWD
+		cp /home/$USER/bin/models/main.c $PWD/main.c
+
+	elif [ $1 = "py" ]; then
+
+		echo Creating new $2.py in $PWD
+		cp /home/$USER/bin/models/new.py $PWD/$2.py
+
+	elif [ $1 = "c" ] && [ $2 != "main" ]; then
+		
+		name=$2
+		struct_name=$2
+		echo Creating new $2.c and $2.h in $PWD
+		cp /home/$USER/bin/models/new.c $PWD/$2.c
+		sed -i -e "s/new/$2/g" $PWD/$2.c
+		name="${name^^}"
+		cp /home/$USER/bin/models/new.h $PWD/$2.h
+		sed -i -e "s/MY_SYMBOL/$name/g" $PWD/$2.h
+		sed -i -e "s/my_struct/$struct_name/g" $PWD/$2.h
+
+
+	elif [ $1 = "-h" ] || [ $1 = "help" ] || [ $1 = "--help" ]; then
+
+		echo ================================
+		echo ================================
+		echo Syntax : nf filetype filename
+		echo For c, java, latex, bash, python
+		echo ================================
+		echo ================================
+		echo Syntax : nf filetype filename
+		echo nf c 		==\> main.c
+		echo nf c name 	==\> name.c name.h
+		echo nf java 	==\> main.java
+		echo nf report 	==\> complete report structure
+		echo nf py name ==\> name.py
+
+	else
+
+		echo ================================
+		echo ================================
+		echo NO VALID ARG
+		echo ================================
+		echo ================================
+		echo Syntax : new filetype filename
+		echo For c, java, latex, bash
+		echo ================================
+		echo ================================
+		echo Syntax : nf filetype filename
+		echo nf c 		==\> main.c
+		echo nf c name 	==\> name.c name.h
+		echo nf java 	==\> main.java
+		echo nf report 	==\> complete report structure
+		echo nf py name ==\> name.py
+	fi
+else
+
+	echo ================================
+	echo ================================
+	echo Syntax : nf filetype filename
+	echo For c, java, latex, bash
+	echo ================================
+	echo ================================
+	echo Syntax : nf filetype filename
+	echo nf c 		==\> main.c
+	echo nf c name 	==\> name.c name.h
+	echo nf java 	==\> main.java
+	echo nf report 	==\> complete report structure
+	echo nf py name ==\> name.py
+
+fi
+
+
+
