@@ -1,0 +1,37 @@
+[global_config]
+  handle_size = 0
+  title_hide_sizetext = True
+  focus = system
+  hide_from_taskbar = True
+  always_on_top = True
+  borderless = True
+  geometry_hinting = False
+  tab_position = bottom
+[keybindings]
+  split_vert = <Primary>v
+  resize_right = <Primary>Right
+  hide_window = F12
+  resize_left = <Primary>Left
+  split_horiz = <Primary>h
+[profiles]
+  [[default]]
+    palette = "#000000:#f92672:#6cc72c:#fe9720:#5f91ef:#9358fe:#36af90:#8c8c8c:#4c4c4c:#ff80f4:#a7e22e:#ffee99:#5fd9ef:#ae82fe:#66efd5:#c7cece"
+    background_image = None
+    background_darkness = 0.78
+    scrollback_lines = 10000
+    background_type = transparent
+    use_system_font = False
+    foreground_color = "#ffffff"
+    font = Monaco 11
+[layouts]
+  [[default]]
+    [[[child1]]]
+      position = 0:0
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 1600, 400
+[plugins]
