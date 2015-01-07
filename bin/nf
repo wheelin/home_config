@@ -43,6 +43,13 @@ if [ $# -gt 0 ]; then
 
 		echo Creating new $2.py in $PWD
 		cp /home/$USER/bin/models/new.py $PWD/$2.py
+		chmod +x $PWD/$2.py
+
+	elif [ $1 = "perl" ]; then
+
+		echo Creating new $2.pl in $PWD
+		cp /home/$USER/bin/models/new.pl $PWD/$2.pl
+		chmod +x $PWD/$2.pl
 
 	elif [ $1 = "c" ] && [ $2 != "main" ]; then
 		
