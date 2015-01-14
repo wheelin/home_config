@@ -1,0 +1,10 @@
+#!/bin/bash -       
+#title           	:k810
+#description     	:TODO
+#author		 		:greg
+#date            	:01-14-2015
+#==============================================================================
+
+for i in 0 1 2 3 4 5 6 7; do
+	sudo ./k810_conf -d /dev/hidraw$i -f on
+done
