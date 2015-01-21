@@ -29,10 +29,10 @@ if [ $# -gt 0 ]; then
 		echo Creating new $2 bash script in $PWD
 		cp /home/$USER/bin/models/new $PWD/$2
 		chmod +x $PWD/$2
-		sed -i -e "s/auteur/$USER/g" /home/$USER/bin/$2
-		sed -i -e "s/titre/$2/g" /home/$USER/bin/$2
+		sed -i -e "s/auteur/$USER/g" $PWD/$2
+		sed -i -e "s/titre/$2/g" $PWD/$2
 		NOW=$(date +"%m-%d-%Y")
-		sed -i -e "s/today/$NOW/g" /home/$USER/bin/$2
+		sed -i -e "s/today/$NOW/g" $PWD/$2
 	
 	elif [ "$1" = "c" ] && [ "$2" = "main" ] || [ "$1" = "c" ] && [ -z $2 ]; then
 

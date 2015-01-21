@@ -1,0 +1,11 @@
+#!/bin/bash -       
+#title           	:install_conf
+#description     	:TODO
+#author		 		:greg
+#date            	:01-21-2015
+#==============================================================================
+cp .bashrc $HOME/
+cp .bash_aliases $HOME/
+cp -r bin/ $HOME/
+cp .inputrc $HOME/
+source $HOME/.bashrc
