@@ -24,7 +24,6 @@
     background_type = transparent
     use_system_font = False
     foreground_color = "#ffffff"
-    font = Monaco 11
 [layouts]
   [[default]]
     [[[child1]]]
