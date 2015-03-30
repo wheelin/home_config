@@ -7,16 +7,20 @@ from subprocess import call
 import subprocess as sb
 
 def check_arg(arg):
-    if os.path.isfile(arg):
+    if os.path.isfile(arg[1]):
         return True
-    elif "-h" in arg or "help" in arg:
+    elif "-h" in arg[1] or "help" in arg[1]:
         print("Just type this command with the file you want to open.\n")
+        return False
+    elif "-p" in arg[1] and os.path.isfile(arg[2]):
+        mime_t = str(magic.from_file(arg[2], mime=True).strip())
+        print(mime_t)
+        return False
     else:
         return False
 
 def check_extension_and_open(path):
     mime_t = str(magic.from_file(path, mime=True).strip())
-    #print(mime_t)
     if "pdf" in mime_t : 
         call(["evince", path], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
     elif "image" in mime_t:
@@ -27,15 +31,16 @@ def check_extension_and_open(path):
         call(["subl", path])
     elif "audio" in mime_t or "video" in mime_t:
         call(["mplayer", path])
+    elif "torrent" in mime_t:
+        call(["transmission-gtk", path], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
     else:
         print("No configuration for this file. Please, add support for this file in the op script.\n")
-        return None
 
 def main():
     ext = ''
-    path = sys.argv[1]
+    path = sys.argv
     if check_arg(path):
-        ext = check_extension_and_open(path)
+        check_extension_and_open(path)
 
 if __name__ == '__main__':
     main()
