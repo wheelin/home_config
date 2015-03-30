@@ -20,19 +20,19 @@ def check_arg(arg):
         return False
 
 def check_extension_and_open(path):
-    mime_t = str(magic.from_file(path, mime=True).strip())
+    mime_t = str(magic.from_file(path[1], mime=True).strip())
     if "pdf" in mime_t : 
-        call(["evince", path], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
+        call(["evince", path[1]], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
     elif "image" in mime_t:
-        call(["eog", path], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
+        call(["eog", path[1]], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
     elif "zip" in mime_t or "tar" in mime_t or "rar" in mime_t:
-        call(["file-roller", path], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
+        call(["file-roller", path[1]], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
     elif "text" in mime_t:
-        call(["subl", path])
+        call(["subl", path[1]])
     elif "audio" in mime_t or "video" in mime_t:
-        call(["mplayer", path])
+        call(["mplayer", path[1]])
     elif "torrent" in mime_t:
-        call(["transmission-gtk", path], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
+        call(["transmission-gtk", path[1]], stdout=sb.DEVNULL, stderr=sb.DEVNULL)
     else:
         print("No configuration for this file. Please, add support for this file in the op script.\n")
 
