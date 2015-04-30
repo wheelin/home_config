@@ -62,7 +62,7 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     #PS1="\[\e[01;32m\]\u\[\e[0m\]\[\e[00;31m\]@\[\e[0m\]\[\e[01;36m\]\w\[\e[0m\]\[\e[00;37m\]>> \[\e[0m\]"
-    PS1="\[\e[01;31m\]\A\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;36m\]\W\[\e[0m\]\[\e[00;37m\]\[\e[0m\]\[\e[00;32m\] \342\226\270 \[\e[0m\]"
+    PS1="\[\e[01;31m\]\A\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;36m\]\w\[\e[0m\]\[\e[00;37m\]\[\e[0m\]\[\e[00;32m\] \342\226\270 \[\e[0m\]"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -132,9 +132,7 @@ export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode Ã¢ÂÂ cyan 
 export PATH=$PATH:/home/greg/bin
 
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
-
-
+xinput set-prop "15" "Evdev Wheel Emulation" 1
+xinput set-prop "15" "Evdev Wheel Emulation Button" 2
+xinput set-prop "15" "Evdev Wheel Emulation Timeout" 200
+xinput set-prop "15" "Evdev Wheel Emulation Axes" 6 7 4 5
