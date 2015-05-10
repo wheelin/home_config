@@ -1,5 +1,8 @@
 set nocompatible
 set backspace=indent,eol,start
+call pathogen#infect()
+filetype off
+
 
 set nobackup		" do not keep a backup file, use versions instead
 set history=50		" keep 50 lines of command line history
@@ -17,6 +20,7 @@ if has('mouse')
 endif
 
 syntax on
+
 set hlsearch
 filetype plugin indent on
 autocmd FileType text setlocal textwidth=78
@@ -44,5 +48,8 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
-execute pathogen#infect()
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+set number
+set tabstop=4
+nnoremap <leader><space> :nohlsearch<CR>
+
