@@ -1,0 +1,11 @@
+#!/bin/bash -       
+#title           	:install_sys
+#description     	:install all the desired packages, but will not configure
+#author		 		:greg
+#date            	:today
+#==============================================================================
+# List of packages to install :
+# Dropbox
+# vim, 
+# Chromium, qt, build-essential, cmake, make
+# 
