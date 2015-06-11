@@ -5,7 +5,9 @@
 #date            	:today
 #==============================================================================
 # List of packages to install :
+# git
 # Dropbox
 # vim, 
 # Chromium, qt, build-essential, cmake, make
+# Terminator, mplayer, python34-pip 
 # 
