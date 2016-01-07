@@ -8,14 +8,13 @@ alias ser='sudo pacman -Ss'
 alias ins='sudo pacman -S'
 alias delp='sudo pacman -Rs'
 alias cpr='cp -r'
-alias untar='tar -xvjf'
 alias clean='sudo pacman -Sc'
 alias update='sudo pacman -Syu'
 alias pins='sudo pip install'
 alias music='find ~/Dropbox/Musique \( -iname "*.mp3" -o -iname "*.ogg" -o -iname "*.wma" -iname "*.m4a" \) -exec mplayer -shuffle '{}' +'
 alias reboot='sudo reboot'
 alias srcb='source $HOME/.bashrc'
-
+alias list='pacman -Qe'
 
 
 mkcd()
