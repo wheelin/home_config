@@ -48,10 +48,31 @@ if has('langmap') && exists('+langnoremap')
   " compatible).
   set langnoremap
 endif
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+
+" SYNTAX HIGHLIGHTING:
+set t_Co=256
+syntax on
+set bs=2
+set number
+colorscheme molokai 
+hi Normal ctermfg=252 ctermbg=none
+set tabstop=4
+set shiftwidth=4
+set shiftround
+set ignorecase
+set title
+
 set number
 set tabstop=4
 nnoremap <leader><space> :nohlsearch<CR>
-colorscheme molokai
 let vim_markdown_preview_use_xdg_open=1
 let vim_markdown_preview_github=1
+
+"Syntax checking options and settings"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
