@@ -95,3 +95,18 @@ orphans()
 		sudo pacman -Rns $(pacman -Qdtq)
 	fi
 }
+
+export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode Ã¢ÂÂ red
+export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode Ã¢ÂÂ bold, magenta
+export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
+export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
+export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode Ã¢ÂÂ yellow
+export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
+export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode Ã¢ÂÂ cyan 
+
+export PATH=$PATH:/home/greg/bin
+
+xinput set-prop "12" "Evdev Wheel Emulation" 1
+xinput set-prop "12" "Evdev Wheel Emulation Button" 2
+xinput set-prop "12" "Evdev Wheel Emulation Timeout" 200
+xinput set-prop "12" "Evdev Wheel Emulation Axes" 6 7 4 5
