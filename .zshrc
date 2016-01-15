@@ -87,6 +87,15 @@ alias update='sudo pacman -Syu'
 alias reboot='sudo reboot'
 alias stg='sudo systemctl start gdm.service'
 
+list()
+{
+	if [[ "$#" -eq 0 ]]; then
+		pacman -Qe
+	else
+		pacman -Qe | grep "$@"
+	fi
+}
+
 orphans()
 {
 	if [[ ! -n $(pacman -Qdt) ]]; then
