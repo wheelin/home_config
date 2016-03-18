@@ -1,10 +1,12 @@
 #!/bin/bash
 
+current="$(dirname "$0")"
+
 if [ $# -gt 0 ]; then
 	if [ $1 = "java" ]; then
 
 		echo Creating new $2.java in $PWD
-		cp /home/$USER/bin/models/new.java $PWD/$2.java
+		cp $current/models/new.java $PWD/$2.java
 		sed -i -e "s/temp/$name/g" $PWD/$2.java
 
 	elif [ $1 = "report" ] && [ ! -z $2 ]; then
@@ -13,21 +15,21 @@ if [ $# -gt 0 ]; then
 		mkdir $PWD/$2
 		mkdir $PWD/$2/img
 		mkdir $PWD/$2/sections
-		cp /home/$USER/bin/models/section.tex $PWD/$2/sections/intro.tex
-		cp /home/$USER/bin/models/section.tex $PWD/$2/sections/other.tex
-		cp /home/$USER/bin/models/section.tex $PWD/$2/sections/conclusion.tex
-		cp /home/$USER/bin/models/new.tex $PWD/$2/$2.tex
+		cp $current/models/section.tex $PWD/$2/sections/intro.tex
+		cp $current/models/section.tex $PWD/$2/sections/other.tex
+		cp $current/models/section.tex $PWD/$2/sections/conclusion.tex
+		cp $current/models/new.tex $PWD/$2/$2.tex
 
 	elif [ $1 = "section" ]; then
 
 		echo Creating new $2.tex in $PWD
-		cp /home/$USER/bin/models/section.tex $PWD/$2.tex
+		cp $current/models/section.tex $PWD/$2.tex
 		sed -i -e "s/New section/$name/g" $PWD/$2.tex
 
 	elif [ $1 = "bash" ]; then
 
 		echo Creating new $2 bash script in $PWD
-		cp /home/$USER/bin/models/new $PWD/$2
+		cp $current/models/new $PWD/$2
 		chmod +x $PWD/$2
 		sed -i -e "s/auteur/$USER/g" $PWD/$2
 		sed -i -e "s/titre/$2/g" $PWD/$2
@@ -37,18 +39,18 @@ if [ $# -gt 0 ]; then
 	elif [ "$1" = "c" ] && [ "$2" = "main" ] || [ "$1" = "c" ] && [ -z $2 ]; then
 
 		echo Creating new main.c in $PWD
-		cp /home/$USER/bin/models/main.c $PWD/main.c
+		cp $current/models/main.c $PWD/main.c
 
 	elif [ $1 = "py" ]; then
 
 		echo Creating new $2.py in $PWD
-		cp /home/$USER/bin/models/new.py $PWD/$2.py
+		cp $current/models/new.py $PWD/$2.py
 		chmod +x $PWD/$2.py
 
 	elif [ $1 = "perl" ]; then
 
 		echo Creating new $2.pl in $PWD
-		cp /home/$USER/bin/models/new.pl $PWD/$2.pl
+		cp $current/models/new.pl $PWD/$2.pl
 		chmod +x $PWD/$2.pl
 
 	elif [ $1 = "c" ] && [ $2 != "main" ]; then
@@ -56,10 +58,10 @@ if [ $# -gt 0 ]; then
 		name=$2
 		struct_name=$2
 		echo Creating new $2.c and $2.h in $PWD
-		cp /home/$USER/bin/models/new.c $PWD/$2.c
+		cp $current/models/new.c $PWD/$2.c
 		sed -i -e "s/new/$2/g" $PWD/$2.c
 		name="${name^^}"
-		cp /home/$USER/bin/models/new.h $PWD/$2.h
+		cp $current/models/new.h $PWD/$2.h
 		sed -i -e "s/MY_SYMBOL/$name/g" $PWD/$2.h
 		sed -i -e "s/my_struct/$struct_name/g" $PWD/$2.h
 
