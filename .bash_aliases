@@ -68,6 +68,3 @@ random()
 }
 
 
-alias dropbox='cd ~/Dropbox/'
-alias home='cd'
-alias workspace='cd ~/workspace/'
