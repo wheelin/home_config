@@ -40,6 +40,7 @@ if [ $# -gt 0 ]; then
 
 		echo Creating new main.c in $PWD
 		cp $current/models/main.c $PWD/main.c
+		cp $current/models/Makefile $PWD/Makefile
 
 	elif [ $1 = "py" ]; then
 
