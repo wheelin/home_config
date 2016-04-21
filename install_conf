@@ -4,13 +4,13 @@
 #author		 	:greg
 #date            	:01-21-2015
 #==============================================================================
-cp .bashrc $HOME/
-cp .bash_aliases $HOME/
-cp -r bin/ $HOME/
-cp .inputrc $HOME/
+ln -s .bashrc $HOME/.bashrc
+ln -s .bash_aliases $HOME/.bash_aliases
+ln -s bin/ $HOME/bin
+ln -s .inputrc $HOME/.inputrc
 if [[ ! -f $HOME/.config/terminator ]]; then
     mkdir $HOME/.config/terminator
 fi
-cp terminator_config $HOME/.config/terminator/
+ln -s terminator_config $HOME/.config/terminator/config
 source $HOME/.bashrc
 
