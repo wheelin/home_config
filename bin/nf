@@ -31,28 +31,16 @@ if [ $# -gt 0 ]; then
 		echo Creating new $2 bash script in $PWD
 		cp $current/models/new $PWD/$2
 		chmod +x $PWD/$2
-		sed -i -e "s/auteur/$USER/g" $PWD/$2
-		sed -i -e "s/titre/$2/g" $PWD/$2
+		sed -i -e "s/author/$USER/g" $PWD/$2
+		sed -i -e "s/title/$2/g" $PWD/$2
 		NOW=$(date +"%m-%d-%Y")
 		sed -i -e "s/today/$NOW/g" $PWD/$2
-	
-	elif [ "$1" = "c" ] && [ "$2" = "main" ] || [ "$1" = "c" ] && [ -z $2 ]; then
-
-		echo Creating new main.c in $PWD
-		cp $current/models/main.c $PWD/main.c
-		cp $current/models/Makefile $PWD/Makefile
 
 	elif [ $1 = "py" ]; then
 
 		echo Creating new $2.py in $PWD
 		cp $current/models/new.py $PWD/$2.py
 		chmod +x $PWD/$2.py
-
-	elif [ $1 = "perl" ]; then
-
-		echo Creating new $2.pl in $PWD
-		cp $current/models/new.pl $PWD/$2.pl
-		chmod +x $PWD/$2.pl
 
 	elif [ $1 = "c" ] && [ $2 != "main" ]; then
 		
@@ -66,6 +54,11 @@ if [ $# -gt 0 ]; then
 		sed -i -e "s/MY_SYMBOL/$name/g" $PWD/$2.h
 		sed -i -e "s/my_struct/$struct_name/g" $PWD/$2.h
 
+	elif [ "$1" = "c" ] && [ "$2" = "main" ] || [ "$1" = "c" ] && [ -z $2 ]; then
+
+		echo Creating new main.c in $PWD
+		cp $current/models/main.c $PWD/main.c
+		cp $current/models/Makefile $PWD/Makefile
 
 	elif [ $1 = "-h" ] || [ $1 = "help" ] || [ $1 = "--help" ]; then
 
