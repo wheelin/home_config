@@ -15,6 +15,7 @@ alias music='find ~/Dropbox/Musique \( -iname "*.mp3" -o -iname "*.ogg" -o -inam
 alias reboot='sudo reboot'
 alias srcb='source $HOME/.bashrc'
 alias list='pacman -Qe'
+alias op='xdg-open'
 
 
 mkcd()

@@ -130,5 +130,8 @@ export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
 export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode Ã¢ÂÂ yellow
 export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode Ã¢ÂÂ cyan 
-export PATH=$PATH:/home/greg/bin
 
+export PATH=$PATH:/home/greg/bin
+export GOPATH=/home/$USER/Dropbox/Informatique/golang/package:/home/$USER/Dropbox/Informatique/golang/packages
+
+source /etc/profile.d/autojump.bash 
