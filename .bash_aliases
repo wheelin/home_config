@@ -16,7 +16,7 @@ alias reboot='sudo reboot'
 alias srcb='source $HOME/.bashrc'
 alias list='pacman -Qe'
 alias op='xdg-open'
-
+alias video="mplayer -fs"
 
 mkcd()
 {
