@@ -18,6 +18,11 @@ alias list='pacman -Qe'
 alias op='xdg-open'
 alias video="mplayer -fs"
 
+ta()
+{
+  (/opt/textadept/textadept "$@"  > /dev/null 2>&1  &)
+}
+
 mkcd()
 {
 	if [[ ! -z $1 ]]; then
@@ -67,5 +72,3 @@ random()
 	val=$(rand)
 	echo $((val % $1))
 }
-
-
