@@ -17,6 +17,11 @@ alias srcb='source $HOME/.bashrc'
 alias list='pacman -Qe'
 alias video="mplayer -fs"
 
+ta()
+{
+  (/opt/textadept/textadept "$@"  > /dev/null 2>&1  &)
+}
+
 op()
 {
   (xdg-open "$@"  > /dev/null 2>&1  &)
