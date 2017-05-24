@@ -1,8 +1,8 @@
 local multiedit = require'common/multiedit'
 
 if not CURSES then 
-  ui.set_theme('base16-monokai-dark', {
-    font = "Source Code Pro",
+  ui.set_theme('base16-spacemacs-light', {
+    font = "Inconsolata",
     fontsize = 12
   }) 
 end
