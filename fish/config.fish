@@ -13,6 +13,18 @@ end
 
 # aliases
 
+function gog
+    googler -l en $argv
+end
+
+function tef
+    translate en fr $argv
+end 
+
+function tfe
+    translate fr en $argv
+end
+
 function ta
     /opt/textadept/textadept $argv > /dev/null 2>&1 &
 end
