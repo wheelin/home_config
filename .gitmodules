@@ -1,0 +1,18 @@
+[submodule "vim/plugged/nerdtree"]
+	path = vim/plugged/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/vim/plugged/auto-pairs"]
+	path = vim/plugged/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "vim/plugged/rust.vim"]
+	path = vim/plugged/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "vim/plugged/vim-racer"]
+	path = vim/plugged/vim-racer
+	url = https://github.com/racer-rust/vim-racer
+[submodule "vim/plugged/supertab"]
+	path = vim/plugged/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "vim/plugged/neocomplete.vim"]
+	path = vim/plugged/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
