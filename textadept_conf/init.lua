@@ -27,3 +27,6 @@ keys.home = multiedit.line_start
 keys.shome = multiedit.line_start_extend
 keys["end"] = multiedit.line_end
 keys["send"] = multiedit.line_end_extend
+
+-- enable racer for rust files autocompletion
+_RACER = true
