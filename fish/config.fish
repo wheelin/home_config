@@ -1,6 +1,3 @@
-
-
-
 function fish_prompt
     set hour (date +"%X")
     set_color red
@@ -34,11 +31,11 @@ function music
 end
 
 function couleur_3
-    mplayer -playlist http://stream.srg-ssr.ch/couleur3/mp3_128.m3u
+    mpv http://stream.srg-ssr.ch/couleur3/mp3_128.m3u
 end
 
 function ser
-    command sudo pacman -Ss $argv
+    command pacman -Ss $argv
 end
 
 function ins
@@ -64,3 +61,15 @@ end
 function orphans
     sudo pacman -Rns (pacman -Qdtq)
 end
+
+function dis_kbd_light
+    dbus-send --system --type=method_call  --dest="org.freedesktop.UPower" "/org/freedesktop/UPower/KbdBacklight" "org.freedesktop.UPower.KbdBacklight.SetBrightness" int32:0
+end
+
+function mntpi
+    sudo sshfs -o allow_other,default_permissions pi@172.22.22.60:/home/pi /mnt/pi/
+end 
+
+function sshpi
+    ssh pi@172.22.22.60
+end 
