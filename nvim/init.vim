@@ -40,7 +40,9 @@ Plug 'junegunn/fzf'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ervandew/supertab'
+Plug 'rafi/awesome-vim-colorschemes'
 call plug#end()
+
 
 " Nerdtree configuration
 nmap <F6> :NERDTreeToggle<CR>
