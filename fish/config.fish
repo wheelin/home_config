@@ -50,6 +50,10 @@ function update
     command sudo pacman -Syu
 end
 
+function listp
+    command pacman -Qqe
+end
+
 function reboot
     command sudo reboot
 end
