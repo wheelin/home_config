@@ -10,26 +10,6 @@ end
 
 # aliases
 
-function gog
-    googler -l en $argv
-end
-
-function tef
-    translate en fr $argv
-end 
-
-function tfe
-    translate fr en $argv
-end
-
-function ta
-    /opt/textadept/textadept $argv > /dev/null 2>&1 &
-end
-
-function music
-    mplayer ~/Dropbox/Musique/**
-end
-
 function couleur_3
     mpv http://stream.srg-ssr.ch/couleur3/mp3_128.m3u
 end
@@ -58,10 +38,6 @@ function reboot
     command sudo reboot
 end
 
-function op
-    xdg-open $argv > /dev/null 2>&1 &
-end
-
 function orphans
     sudo pacman -Rns (pacman -Qdtq)
 end
@@ -76,4 +52,24 @@ end
 
 function sshpi
     ssh pi@172.22.22.60
+end 
+
+function tree
+    command exa --tree --level=3 $argv
+end
+
+function ls
+    command exa $argv
+end
+
+function yturl
+    command youtube-dl -x --no-playlist --audio-format mp3 $argv -o "/home/greg/Music/mps/%(title)s.%(ext)s"
+end 
+
+function ytser
+    command youtube-dl -x --no-playlist --audio-format mp3 ytsearch:$argv -o "/home/greg/Music/mps/%(title)s.%(ext)s"
+end 
+
+function ytdlpl
+    command youtube-dl -x --audio-format mp3 $argv -o "/home/greg/Music/mps/%(creator)s/%(creator)s_%(title)s.%(ext)s"
 end 
