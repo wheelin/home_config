@@ -8,6 +8,9 @@ function fish_prompt
     echo '>>> '
 end
 
+# Path additions
+set PATH $PATH /home/greg/.cargo/bin
+
 # aliases
 
 function couleur_3
@@ -58,10 +61,6 @@ function tree
     command exa --tree --level=3 $argv
 end
 
-function ls
-    command exa $argv
-end
-
 function yturl
     command youtube-dl -x --no-playlist --audio-format mp3 $argv -o "/home/greg/Music/mps/%(title)s.%(ext)s"
 end 
@@ -72,4 +71,8 @@ end
 
 function ytdlpl
     command youtube-dl -x --audio-format mp3 $argv -o "/home/greg/Music/mps/%(creator)s/%(creator)s_%(title)s.%(ext)s"
-end 
+end
+
+function op 
+    command xdg-open $argv
+end
