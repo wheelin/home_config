@@ -24,11 +24,12 @@ if [[ -z $pid ]]; then
     kitty --start-as=maximized --class=kitty_drp
 fi
 
-# get windows id from pid ex: 0x2a00125%
+# get windows id from pid ex: 0x2a00125
 wid=$(printf 0x%x "$pid")
 
 # maximize terminal emulator
 #wrs "$width" "$height" "$wid"
 
 # toggle show/hide terminal emulator
-mapw -t "$wid"	
+# wmctrl -ri "$wid" -e 0,1932,58,3438,1385 # move the window into preset position
+mapw -t "$wid"

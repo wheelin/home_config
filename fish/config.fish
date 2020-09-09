@@ -10,7 +10,8 @@ end
 
 # Path additions
 set PATH $PATH /home/greg/.cargo/bin
-
+set PATH $PATH /home/greg/Apps
+set PATH $PATH /home/greg/.local/bin
 # aliases
 
 function couleur_3
