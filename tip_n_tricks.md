@@ -1,5 +1,7 @@
 # Tips and tricks to remember
 
+## CopyQ
+Add shortcut to desktop environment shortcut manager instead of trying to set it into CopyQ
 
 ## Git 
 Add the following lines to show a good looking branch graph of the current git repository in cli. [Src](https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs)
