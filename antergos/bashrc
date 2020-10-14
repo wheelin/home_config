@@ -132,7 +132,6 @@ export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode Ã¢ÂÂ cyan 
 
 export PATH=$PATH:/home/greg/bin
-export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 
 export PATH=$PATH:$HOME/bin/gcc-arm-none-eabi-7-2018-q2-update/bin
 export PATH=$PATH:$HOME/.cargo/bin
