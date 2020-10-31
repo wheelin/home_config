@@ -1,8 +1,0 @@
-#!/bin/bash -       
-#title           	:gvim
-#description     	:TODO
-#author		 		:greg
-#date            	:05-10-2015
-#==============================================================================
-ARGS="$@"
-gnome-terminal -e "vim $ARGS" &>/dev/null

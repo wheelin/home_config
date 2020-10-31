@@ -31,5 +31,5 @@ wid=$(printf 0x%x "$pid")
 #wrs "$width" "$height" "$wid"
 
 # toggle show/hide terminal emulator
-# wmctrl -ri "$wid" -e 0,1932,58,3438,1385 # move the window into preset position
+wmctrl -ri "$wid" -e 0,1932,58,3438,1385 # move the window into preset position
 mapw -t "$wid"
